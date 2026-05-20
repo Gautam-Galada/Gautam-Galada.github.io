@@ -1,0 +1,266 @@
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #ffffff;
+  color: #111111;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== Links ===== */
+a {
+  color: #0000EE;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #551A8B;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Navigation ===== */
+nav {
+  padding: 12px 0 10px 0;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 16px;
+}
+
+nav a {
+  margin-right: 18px;
+  text-decoration: none;
+  color: #0000EE;
+  font-size: 15px;
+}
+
+nav a:visited {
+  color: #0000EE;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ===== HR ===== */
+hr {
+  border: none;
+  border-top: 1px solid #cccccc;
+  margin: 18px 0;
+}
+
+/* ===== Two-column profile layout ===== */
+.two-col {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.two-col img {
+  max-width: 180px;
+  height: auto;
+  display: block;
+}
+
+.two-col .profile-info {
+  flex: 1;
+}
+
+.profile-info h1 {
+  font-size: 1.3em;
+  margin: 0 0 6px 0;
+  font-weight: bold;
+}
+
+.profile-info p {
+  margin: 4px 0;
+}
+
+.profile-links {
+  margin-top: 10px;
+}
+
+.profile-links a {
+  display: inline;
+}
+
+/* ===== Section headings ===== */
+.section-heading {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.news-heading {
+  font-weight: bold;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.news-heading img {
+  width: 16px;
+  height: 16px;
+}
+
+/* ===== News list ===== */
+ul.news-list {
+  padding-left: 20px;
+  line-height: 1.8;
+  margin-top: 6px;
+}
+
+ul.news-list li {
+  margin-bottom: 2px;
+}
+
+/* ===== Quick links ===== */
+.quick-links {
+  line-height: 1.8;
+}
+
+.quick-links a {
+  margin-right: 6px;
+}
+
+/* ===== Articles page ===== */
+.page-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.page-subtitle {
+  color: #555555;
+  font-size: 0.9em;
+  margin-bottom: 14px;
+}
+
+.article-item {
+  display: block;
+  margin-bottom: 16px;
+}
+
+.article-item a {
+  font-weight: normal;
+}
+
+.meta {
+  color: #555555;
+  font-size: 0.9em;
+  display: block;
+  margin-top: 2px;
+}
+
+/* ===== Projects page ===== */
+.project-card {
+  display: block;
+  margin-bottom: 14px;
+  padding: 10px 12px;
+  border: 1px solid #cccccc;
+}
+
+.project-card .project-title {
+  font-weight: bold;
+}
+
+.project-card .project-desc {
+  margin: 3px 0 4px 0;
+}
+
+.project-card .tags {
+  color: #555555;
+  font-size: 0.88em;
+}
+
+.recent-project-list {
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.9;
+}
+
+.recent-project-list li {
+  margin-bottom: 0;
+}
+
+.ideas-list {
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.9;
+}
+
+.ideas-list li {
+  margin-bottom: 0;
+}
+
+/* ===== Gallery page ===== */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+}
+
+figure {
+  margin: 0;
+}
+
+figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #dddddd;
+  min-height: 120px;
+}
+
+figcaption {
+  font-size: 0.85em;
+  color: #555555;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* ===== Blog/longer reads list ===== */
+.post-list {
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.9;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .two-col {
+    flex-direction: column;
+  }
+
+  .two-col img {
+    max-width: 140px;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+}
