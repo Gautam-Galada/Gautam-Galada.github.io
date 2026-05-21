@@ -17,50 +17,263 @@
     <a href="gallery.html" class="active">Gallery</a>
   </nav>
 
-  <!-- ===== SECTION A: Photos ===== -->
-  <p class="section-heading">Photos</p>
+  <!-- ===== SECTION A: Photos (3×2 grid) ===== -->
+  <p class="page-title">Photos</p>
 
-  <!-- TO ADD A PHOTO: Copy a <figure> block below, place your image in assets/photos/, then update src and caption. -->
+  <!-- Main grid: shows first 6 photos (3 columns × 2 rows).
+       Photos 7+ appear only in the "See More" popup.
+       TO ADD/EDIT PHOTOS: update the `photos` array in the <script> at the bottom.
+       Place images in assets/photos/ and add entries in the same format. -->
+  <div class="photo-grid" id="main-photo-grid"></div>
 
-  <div class="photo-grid">
-    <figure>
-      <img src="assets/photos/photo1.jpg" alt="Photo 1">
-      <figcaption>[PLACEHOLDER caption]</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/photos/photo2.jpg" alt="Photo 2">
-      <figcaption>[PLACEHOLDER caption]</figcaption>
-    </figure>
-    <figure>
-      <img src="assets/photos/photo3.jpg" alt="Photo 3">
-      <figcaption>[PLACEHOLDER caption]</figcaption>
-    </figure>
-  </div>
+  <button class="see-more-btn" id="see-more-btn" onclick="openGalleryModal()">See More</button>
 
   <hr>
 
-  <!-- ===== SECTION B: Blog Posts / Longer Reads ===== -->
-  <p class="section-heading">Longer Reads</p>
+  <!-- ===== SECTION B: Longer Reads ===== -->
+  <p class="page-title">Longer Reads</p>
 
-  <!-- TO ADD A LONGER READ: Copy an <li> below and update the title, url, date, and description.
-       Format:
-       <li><a href="POST_URL" target="_blank" rel="noopener">Post Title</a>
-           <span class="meta">YYYY-MM · One-line description</span></li>
-  -->
+  <!-- TO ADD A LONGER READ:
+       1. Create a markdown file in posts/ (e.g. posts/my-post.md) — write in standard Markdown.
+       2. Add an entry to the `posts` array in the <script> at the bottom.
+       3. The preview (first ~4 lines) and "Read more" popup are handled automatically. -->
 
-  <ul class="post-list">
-    <li>
-      <a href="[PLACEHOLDER — URL]" target="_blank" rel="noopener">[PLACEHOLDER — Post Title]</a>
-      <span class="meta">2026-05 · [PLACEHOLDER — description]</span>
-    </li>
-    <li>
-      <a href="[PLACEHOLDER — URL]" target="_blank" rel="noopener">[PLACEHOLDER — Post Title]</a>
-      <span class="meta">2026-04 · [PLACEHOLDER — description]</span>
-    </li>
-  </ul>
+  <div id="longer-reads-list"></div>
 
   <hr>
 
 </div>
+
+<!-- ===== Gallery Modal (all photos popup) ===== -->
+<div id="gallery-modal" class="modal-overlay" hidden>
+  <div class="modal-box modal-gallery-box">
+    <div class="modal-header">
+      <span>All Photos</span>
+      <button class="modal-close" onclick="closeGalleryModal()">&times;</button>
+    </div>
+    <div class="modal-photo-grid" id="modal-photo-grid"></div>
+  </div>
+</div>
+
+<!-- ===== Post Modal (full markdown reader popup) ===== -->
+<div id="post-modal" class="modal-overlay" hidden>
+  <div class="modal-box modal-post-box">
+    <div class="modal-header">
+      <span id="post-modal-title"></span>
+      <button class="modal-close" onclick="closePostModal()">&times;</button>
+    </div>
+    <div id="post-modal-content" class="post-content-rendered"></div>
+  </div>
+</div>
+
+<!-- marked.js for markdown rendering (loaded from CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/marked@12/marked.min.js"></script>
+<script>
+/* ================================================================
+   PHOTO DATA
+   Add photos here. The first 6 appear in the main 3×2 grid.
+   All photos (6+) appear in the See More popup.
+   Format: { src: 'assets/photos/filename.jpg', caption: 'Caption text' }
+================================================================ */
+const photos = [
+  { src: 'assets/photos/photo1.jpg', caption: '[PLACEHOLDER caption]' },
+  { src: 'assets/photos/photo2.jpg', caption: '[PLACEHOLDER caption]' },
+  { src: 'assets/photos/photo3.jpg', caption: '[PLACEHOLDER caption]' },
+  { src: 'assets/photos/photo4.jpg', caption: '[PLACEHOLDER caption]' },
+  { src: 'assets/photos/photo5.jpg', caption: '[PLACEHOLDER caption]' },
+  { src: 'assets/photos/photo6.jpg', caption: '[PLACEHOLDER caption]' },
+  /* Add more photos below this line:
+  { src: 'assets/photos/photo7.jpg', caption: 'Your caption here' }, */
+];
+
+/* ================================================================
+   LONGER READS DATA
+   Add posts here. Write each post as a .md file in the posts/ folder.
+   The page fetches the file, shows a 4-line preview, and opens the
+   full post in a popup when "Read more" is clicked.
+   Format: { file: 'posts/filename.md', title: 'Display title', meta: 'DATE · X MIN READ' }
+================================================================ */
+const posts = [
+  {
+    file: 'posts/post1.md',
+    title: '[PLACEHOLDER — Post Title 1]',
+    meta: '[PLACEHOLDER DATE] · [X] MIN READ'
+  },
+  {
+    file: 'posts/post2.md',
+    title: '[PLACEHOLDER — Post Title 2]',
+    meta: '[PLACEHOLDER DATE] · [X] MIN READ'
+  },
+  /* Add more posts below this line:
+  { file: 'posts/my-post.md', title: 'My Post Title', meta: '2026-06 · 8 MIN READ' }, */
+];
+
+/* ----------------------------------------------------------------
+   Render main photo grid (first 6)
+---------------------------------------------------------------- */
+function renderMainGrid() {
+  const grid = document.getElementById('main-photo-grid');
+  const slice = photos.slice(0, 6);
+  grid.innerHTML = slice.map(p => `
+    <figure>
+      <img src="${p.src}" alt="${escHtml(p.caption)}" loading="lazy"
+           onerror="this.style.background='#F5F5F5';this.removeAttribute('src')">
+      <figcaption>${escHtml(p.caption)}</figcaption>
+    </figure>
+  `).join('');
+  // Hide see-more if 6 or fewer photos total
+  if (photos.length <= 6) {
+    document.getElementById('see-more-btn').style.display = 'none';
+  }
+}
+
+/* ----------------------------------------------------------------
+   Gallery modal
+---------------------------------------------------------------- */
+function openGalleryModal() {
+  const grid = document.getElementById('modal-photo-grid');
+  grid.innerHTML = photos.map(p => `
+    <figure>
+      <img src="${p.src}" alt="${escHtml(p.caption)}" loading="lazy"
+           onerror="this.style.background='#F5F5F5';this.removeAttribute('src')">
+      <figcaption>${escHtml(p.caption)}</figcaption>
+    </figure>
+  `).join('');
+  openModal('gallery-modal');
+}
+
+function closeGalleryModal() {
+  closeModal('gallery-modal');
+}
+
+/* ----------------------------------------------------------------
+   Post modal — fetch + render markdown
+---------------------------------------------------------------- */
+async function openPostModal(file, title) {
+  document.getElementById('post-modal-title').textContent = title;
+  const content = document.getElementById('post-modal-content');
+  content.innerHTML = '<p style="color:#888;padding:12px 0;">Loading&hellip;</p>';
+  openModal('post-modal');
+  try {
+    const res = await fetch(file);
+    if (!res.ok) throw new Error('Not found');
+    const text = await res.text();
+    content.innerHTML = marked.parse(text);
+  } catch {
+    content.innerHTML = '<p style="color:#888;">Could not load post. Make sure you are serving the site via a local server or GitHub Pages (not opened directly as a file).</p>';
+  }
+}
+
+function closePostModal() {
+  closeModal('post-modal');
+}
+
+/* ----------------------------------------------------------------
+   Render longer reads list with markdown previews
+---------------------------------------------------------------- */
+async function renderLongerReads() {
+  const container = document.getElementById('longer-reads-list');
+  if (posts.length === 0) {
+    container.innerHTML = '<p class="page-subtitle">No posts yet.</p>';
+    return;
+  }
+
+  for (let i = 0; i < posts.length; i++) {
+    const post = posts[i];
+    const item = document.createElement('div');
+    item.className = 'long-read-item';
+
+    // Meta row
+    const metaEl = document.createElement('div');
+    metaEl.className = 'long-read-meta';
+    metaEl.textContent = post.meta;
+
+    // Title
+    const titleEl = document.createElement('div');
+    titleEl.className = 'long-read-title';
+    titleEl.textContent = post.title;
+
+    // Preview box (4-line clamp — filled after fetch)
+    const preview = document.createElement('div');
+    preview.className = 'long-read-preview';
+    preview.textContent = 'Loading…';
+
+    // Read more button
+    const btn = document.createElement('button');
+    btn.className = 'read-more-btn';
+    btn.textContent = 'Read more →';
+    btn.onclick = () => openPostModal(post.file, post.title);
+
+    item.appendChild(metaEl);
+    item.appendChild(titleEl);
+    item.appendChild(preview);
+    item.appendChild(btn);
+
+    if (i > 0) {
+      const sep = document.createElement('hr');
+      sep.style.marginTop = '0';
+      container.insertBefore(sep, item);
+    }
+    container.appendChild(item);
+
+    // Fetch and render preview asynchronously
+    loadPreview(preview, post.file);
+  }
+}
+
+async function loadPreview(el, url) {
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error();
+    const text = await res.text();
+    // Take first 4 non-empty lines for the preview
+    const lines = text.split('\n').filter(l => l.trim()).slice(0, 4).join('\n');
+    el.innerHTML = marked.parse(lines);
+  } catch {
+    el.textContent = '[Preview unavailable — run via local server or GitHub Pages]';
+  }
+}
+
+/* ----------------------------------------------------------------
+   Modal helpers
+---------------------------------------------------------------- */
+function openModal(id) {
+  document.getElementById(id).removeAttribute('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(id) {
+  document.getElementById(id).setAttribute('hidden', '');
+  document.body.style.overflow = '';
+}
+
+// Close on overlay click (outside modal box)
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('modal-overlay')) {
+    e.target.setAttribute('hidden', '');
+    document.body.style.overflow = '';
+  }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay:not([hidden])').forEach(m => {
+      m.setAttribute('hidden', '');
+    });
+    document.body.style.overflow = '';
+  }
+});
+
+function escHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/* ----------------------------------------------------------------
+   Init
+---------------------------------------------------------------- */
+renderMainGrid();
+renderLongerReads();
+</script>
 </body>
 </html>
