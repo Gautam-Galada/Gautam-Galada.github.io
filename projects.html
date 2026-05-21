@@ -18,58 +18,113 @@
   </nav>
 
   <!-- ===== SECTION A: Pinned Projects ===== -->
-  <p class="section-heading">Pinned Projects</p>
+  <p class="page-title">Pinned Projects</p>
 
-  <!-- TO ADD A PINNED PROJECT: Copy a .project-card block below and update the fields.
-       Format:
-       <div class="project-card">
-         <div class="project-title"><a href="GITHUB_URL" target="_blank" rel="noopener">Project Name</a></div>
-         <div class="project-desc">One-line description.</div>
-         <div class="tags">[Tag1] [Tag2]</div>
+  <!-- TO ADD A PINNED PROJECT: copy a .pin-card block below and update image src, project name link, description, and tags.
+       Place project screenshot in assets/projects/.
+       <div class="pin-card">
+         <img class="pin-card-img" src="assets/projects/pinN.jpg" alt="Project Name">
+         <div class="pin-card-body">
+           <div class="project-title"><a href="GITHUB_URL" target="_blank" rel="noopener">Project Name</a></div>
+           <div class="project-desc">One-line description.</div>
+           <div class="tags"><span class="tag">Tag1</span> <span class="tag">Tag2</span></div>
+         </div>
        </div>
   -->
 
-  <div class="project-card">
-    <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">Project Alpha</a></div>
-    <div class="project-desc">Description placeholder.</div>
-    <div class="tags">[Python]</div>
-  </div>
+  <div class="pinned-grid">
 
-  <div class="project-card">
-    <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">Project Beta</a></div>
-    <div class="project-desc">Description placeholder.</div>
-    <div class="tags">[Research]</div>
+    <div class="pin-card">
+      <img class="pin-card-img" src="assets/projects/pin1.jpg" alt="Project Alpha">
+      <div class="pin-card-body">
+        <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">Project Alpha</a></div>
+        <div class="project-desc">Description placeholder.</div>
+        <div class="tags"><span class="tag">Python</span> <span class="tag">ML</span></div>
+      </div>
+    </div>
+
+    <div class="pin-card">
+      <img class="pin-card-img" src="assets/projects/pin2.jpg" alt="Project Beta">
+      <div class="pin-card-body">
+        <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">Project Beta</a></div>
+        <div class="project-desc">Description placeholder.</div>
+        <div class="tags"><span class="tag">Research</span></div>
+      </div>
+    </div>
+
+    <div class="pin-card">
+      <img class="pin-card-img" src="assets/projects/pin3.jpg" alt="Project Gamma">
+      <div class="pin-card-body">
+        <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">Project Gamma</a></div>
+        <div class="project-desc">Description placeholder.</div>
+        <div class="tags"><span class="tag">NLP</span> <span class="tag">Open Source</span></div>
+      </div>
+    </div>
+
   </div>
 
   <hr>
 
   <!-- ===== SECTION B: Recent Projects ===== -->
-  <p class="section-heading">Recent Projects</p>
+  <p class="page-title">Recent Projects</p>
 
-  <!-- TO ADD A RECENT PROJECT: Copy an <li> below, most recent first.
-       Format: <li>YYYY-MM &mdash; <a href="GITHUB_URL" target="_blank" rel="noopener">Project Name</a> &mdash; One-line description.</li>
+  <!-- TO ADD A RECENT PROJECT: copy a .recent-project-card block below, most recent first.
+       Place project image in assets/projects/.
+       <div class="recent-project-card">
+         <img class="proj-img" src="assets/projects/projN.jpg" alt="Project Name">
+         <div class="proj-body">
+           <div class="project-title"><a href="GITHUB_URL" target="_blank" rel="noopener">Project Name</a></div>
+           <div class="project-desc">Description.</div>
+           <div class="tags"><span class="tag">Tag</span></div>
+           <div class="proj-date">YYYY-MM</div>
+         </div>
+       </div>
   -->
 
-  <ul class="recent-project-list">
-    <li>2026-05 &mdash; <a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">[PLACEHOLDER project name]</a> &mdash; [PLACEHOLDER description].</li>
-    <li>2026-04 &mdash; <a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">[PLACEHOLDER project name]</a> &mdash; [PLACEHOLDER description].</li>
-    <li>2026-03 &mdash; <a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">[PLACEHOLDER project name]</a> &mdash; [PLACEHOLDER description].</li>
-  </ul>
+  <div class="recent-project-card">
+    <img class="proj-img" src="assets/projects/proj1.jpg" alt="Recent project 1">
+    <div class="proj-body">
+      <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">[PLACEHOLDER project name]</a></div>
+      <div class="project-desc">[PLACEHOLDER description].</div>
+      <div class="tags"><span class="tag">Python</span></div>
+      <div class="proj-date">2026-05</div>
+    </div>
+  </div>
+
+  <div class="recent-project-card">
+    <img class="proj-img" src="assets/projects/proj2.jpg" alt="Recent project 2">
+    <div class="proj-body">
+      <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">[PLACEHOLDER project name]</a></div>
+      <div class="project-desc">[PLACEHOLDER description].</div>
+      <div class="tags"><span class="tag">Research</span></div>
+      <div class="proj-date">2026-04</div>
+    </div>
+  </div>
+
+  <div class="recent-project-card">
+    <img class="proj-img" src="assets/projects/proj3.jpg" alt="Recent project 3">
+    <div class="proj-body">
+      <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">[PLACEHOLDER project name]</a></div>
+      <div class="project-desc">[PLACEHOLDER description].</div>
+      <div class="tags"><span class="tag">NLP</span></div>
+      <div class="proj-date">2026-03</div>
+    </div>
+  </div>
 
   <hr>
 
   <!-- ===== SECTION C: Ideas ===== -->
-  <p class="section-heading">Ideas &amp; Thoughts</p>
-  <p class="page-subtitle">A running log of ideas, hypotheses, and half-baked thoughts.</p>
+  <p class="page-title">Ideas &amp; Thoughts</p>
+  <p class="ideas-subheading">A running log of ideas, hypotheses, and half-baked thoughts.</p>
 
-  <!-- TO ADD AN IDEA: Copy an <li> below, most recent first.
-       Format: <li>YYYY-MM-DD &mdash; Idea text.</li>
+  <!-- TO ADD AN IDEA: copy an <li> below, most recent first.
+       Format: <li><span class="idea-date">YYYY-MM-DD</span> &mdash; Idea text.</li>
   -->
 
   <ul class="ideas-list">
-    <li>2026-05-01 &mdash; [PLACEHOLDER idea].</li>
-    <li>2026-04-15 &mdash; [PLACEHOLDER idea].</li>
-    <li>2026-03-20 &mdash; [PLACEHOLDER idea].</li>
+    <li><span class="idea-date">2026-05-01</span> &mdash; [PLACEHOLDER idea].</li>
+    <li><span class="idea-date">2026-04-15</span> &mdash; [PLACEHOLDER idea].</li>
+    <li><span class="idea-date">2026-03-20</span> &mdash; [PLACEHOLDER idea].</li>
   </ul>
 
   <hr>

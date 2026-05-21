@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Hind+Madurai:wght@300;400;500&display=swap');
+
 /* ===== Base ===== */
 * {
   box-sizing: border-box;
 }
 
 body {
-  background: #ffffff;
-  color: #111111;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  background: #FAF8F5;
+  color: #1A1A1A;
+  font-family: 'Hind Madurai', sans-serif;
+  font-weight: 400;
   font-size: 15px;
   line-height: 1.6;
   margin: 0;
@@ -21,50 +24,65 @@ body {
 
 /* ===== Links ===== */
 a {
-  color: #0000EE;
+  color: #2A5DB0;
   text-decoration: underline;
 }
 
 a:visited {
-  color: #551A8B;
+  color: #2A5DB0;
 }
 
 a:hover {
+  color: #1A3F80;
   text-decoration: underline;
+}
+
+/* ===== Headings ===== */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+h4, h5 {
+  font-family: 'Lora', serif;
 }
 
 /* ===== Navigation ===== */
 nav {
-  padding: 12px 0 10px 0;
-  border-bottom: 1px solid #cccccc;
-  margin-bottom: 16px;
+  padding: 12px 0 12px 0;
+  border-bottom: 1px solid #E3DAC9;
+  margin-bottom: 28px;
 }
 
 nav a {
-  margin-right: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: #1A1A1A;
   text-decoration: none;
-  color: #0000EE;
-  font-size: 15px;
+  margin-right: 22px;
 }
 
 nav a:visited {
-  color: #0000EE;
+  color: #1A1A1A;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #2A5DB0;
 }
 
 nav a.active {
-  font-weight: bold;
-  text-decoration: underline;
+  color: #1A1A1A;
+  border-bottom: 2px solid #E3DAC9;
+  padding-bottom: 3px;
 }
 
 /* ===== HR ===== */
 hr {
   border: none;
-  border-top: 1px solid #cccccc;
-  margin: 18px 0;
+  border-top: 1px solid #E3DAC9;
+  margin: 24px 0;
 }
 
 /* ===== Two-column profile layout ===== */
@@ -86,9 +104,10 @@ hr {
 }
 
 .profile-info h1 {
-  font-size: 1.3em;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.4em;
   margin: 0 0 6px 0;
-  font-weight: bold;
 }
 
 .profile-info p {
@@ -105,12 +124,14 @@ hr {
 
 /* ===== Section headings ===== */
 .section-heading {
-  font-weight: bold;
+  font-family: 'Lora', serif;
+  font-weight: 600;
   font-size: 1em;
 }
 
 .news-heading {
-  font-weight: bold;
+  font-family: 'Lora', serif;
+  font-weight: 600;
   font-size: 1em;
   display: flex;
   align-items: center;
@@ -124,6 +145,7 @@ hr {
 
 /* ===== News list ===== */
 ul.news-list {
+  font-family: 'Hind Madurai', sans-serif;
   padding-left: 20px;
   line-height: 1.8;
   margin-top: 6px;
@@ -142,64 +164,232 @@ ul.news-list li {
   margin-right: 6px;
 }
 
-/* ===== Articles page ===== */
+/* ===== Page title / subtitle ===== */
 .page-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   font-size: 1.2em;
-  font-weight: bold;
   margin-bottom: 4px;
 }
 
 .page-subtitle {
-  color: #555555;
+  font-family: 'Hind Madurai', sans-serif;
+  color: #666666;
   font-size: 0.9em;
   margin-bottom: 14px;
+  margin-top: 0;
 }
 
-.article-item {
-  display: block;
-  margin-bottom: 16px;
-}
-
-.article-item a {
-  font-weight: normal;
-}
-
+/* ===== Meta text ===== */
 .meta {
-  color: #555555;
+  font-family: 'Hind Madurai', sans-serif;
+  color: #666666;
   font-size: 0.9em;
   display: block;
   margin-top: 2px;
 }
 
-/* ===== Projects page ===== */
-.project-card {
+/* ===== Articles page — Substack-style horizontal cards ===== */
+.article-card {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 20px 0;
+}
+
+.article-card-text {
+  flex: 7;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.article-card-text .article-title {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1A1A1A;
+  text-decoration: none;
+  line-height: 1.4;
   display: block;
+}
+
+.article-card-text .article-title:hover {
+  color: #2A5DB0;
+}
+
+.article-card-text .article-title:visited {
+  color: #1A1A1A;
+}
+
+.article-card-text .article-subtitle {
+  font-family: 'Hind Madurai', sans-serif;
+  font-size: 14px;
+  color: #444444;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.article-card-text .article-byline {
+  font-family: 'Hind Madurai', sans-serif;
+  font-size: 11px;
+  color: #888888;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 6px;
+}
+
+.article-card-thumb {
+  flex: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.article-card-thumb img {
+  width: 160px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  background: #F5F5F5;
+}
+
+/* ===== Tag pills (shared across projects) ===== */
+.tags {
+  margin-top: 6px;
+}
+
+.tag {
+  display: inline-block;
+  font-family: 'Hind Madurai', sans-serif;
+  font-size: 11px;
+  color: #444444;
+  background: #F5F5F5;
+  border: 1px solid #E3DAC9;
+  border-radius: 4px;
+  padding: 2px 7px;
+  margin-right: 4px;
+  margin-bottom: 2px;
+}
+
+/* ===== Projects — Pinned grid ===== */
+.pinned-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.pin-card {
+  border: 1px solid #E3DAC9;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #FAF8F5;
+}
+
+.pin-card-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  background: #F5F5F5;
+}
+
+.pin-card-body {
+  padding: 12px;
+}
+
+.pin-card-body .project-title {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 4px;
+}
+
+.pin-card-body .project-title a {
+  text-decoration: none;
+  color: #1A1A1A;
+}
+
+.pin-card-body .project-title a:hover {
+  color: #2A5DB0;
+  text-decoration: underline;
+}
+
+.pin-card-body .project-desc {
+  font-family: 'Hind Madurai', sans-serif;
+  font-size: 13px;
+  color: #444444;
+  margin-bottom: 8px;
+}
+
+/* ===== Projects — Recent row cards ===== */
+.recent-project-card {
+  display: flex;
+  border: 1px solid #E3DAC9;
+  border-radius: 10px;
+  overflow: hidden;
   margin-bottom: 14px;
-  padding: 10px 12px;
-  border: 1px solid #cccccc;
 }
 
-.project-card .project-title {
-  font-weight: bold;
+.recent-project-card .proj-img {
+  width: 160px;
+  min-width: 160px;
+  object-fit: cover;
+  display: block;
+  background: #F5F5F5;
 }
 
-.project-card .project-desc {
-  margin: 3px 0 4px 0;
+.recent-project-card .proj-body {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.project-card .tags {
-  color: #555555;
-  font-size: 0.88em;
+.proj-body .project-title {
+  font-family: 'Lora', serif;
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-bottom: 4px;
 }
 
-.recent-project-list {
-  list-style: none;
-  padding-left: 0;
-  line-height: 1.9;
+.proj-body .project-title a {
+  text-decoration: none;
+  color: #1A1A1A;
 }
 
-.recent-project-list li {
-  margin-bottom: 0;
+.proj-body .project-title a:hover {
+  color: #2A5DB0;
+  text-decoration: underline;
+}
+
+.proj-body .project-desc {
+  font-family: 'Hind Madurai', sans-serif;
+  font-size: 14px;
+  color: #444444;
+  flex: 1;
+  margin-bottom: 8px;
+}
+
+.proj-body .proj-date {
+  font-family: 'Hind Madurai', sans-serif;
+  font-size: 12px;
+  color: #888888;
+  margin-top: auto;
+}
+
+/* ===== Projects — Ideas section ===== */
+.ideas-subheading {
+  font-family: 'Lora', serif;
+  font-size: 0.92em;
+  color: #444444;
+  margin-top: -8px;
+  margin-bottom: 10px;
 }
 
 .ideas-list {
@@ -209,7 +399,14 @@ ul.news-list li {
 }
 
 .ideas-list li {
-  margin-bottom: 0;
+  font-family: 'Hind Madurai', sans-serif;
+  margin-bottom: 2px;
+}
+
+.idea-date {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #888888;
 }
 
 /* ===== Gallery page ===== */
@@ -228,18 +425,18 @@ figure img {
   width: 100%;
   height: auto;
   display: block;
-  background: #dddddd;
+  background: #F5F5F5;
   min-height: 120px;
 }
 
 figcaption {
+  font-family: 'Hind Madurai', sans-serif;
   font-size: 0.85em;
-  color: #555555;
+  color: #666666;
   text-align: center;
   margin-top: 4px;
 }
 
-/* ===== Blog/longer reads list ===== */
 .post-list {
   list-style: none;
   padding-left: 0;
@@ -261,6 +458,35 @@ figcaption {
   }
 
   nav a {
-    margin-right: 10px;
+    margin-right: 12px;
+  }
+
+  .article-card {
+    flex-direction: column;
+  }
+
+  .article-card-thumb {
+    order: 2;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .article-card-thumb img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .pinned-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .recent-project-card {
+    flex-direction: column;
+  }
+
+  .recent-project-card .proj-img {
+    width: 100%;
+    height: 160px;
+    min-width: unset;
   }
 }
