@@ -24,6 +24,27 @@ assets/
 - **Add photos**: Drop images into `assets/photos/`, then add a `<figure>` block in `gallery.html`.
 - **Replace profile photo**: Save your photo as `assets/profile.jpg` and update the `<img src>` in `index.html`.
 
+## Local Dashboard
+
+To manage site content locally without editing HTML by hand:
+
+```
+node server.js
+```
+
+Then open **http://localhost:3001** in your browser.
+Fill in the form → click **Save to site** → the HTML file updates on disk immediately.
+
+When you're ready to publish:
+
+```
+git add .
+git commit -m "your message"
+git push origin main
+```
+
+> `dashboard.html`, `server.js`, and `package.json` are listed in `.gitignore` and are never pushed to GitHub.
+
 ## Deploy
 
 GitHub Pages is configured to serve from the `main` branch root.
