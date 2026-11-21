@@ -1,51 +1,45 @@
 # Gautam-Galada.github.io
 
-Personal portfolio site for Gautam Galada, hosted via GitHub Pages at [Gautam-Galada.github.io](https://Gautam-Galada.github.io).
+Personal site of Gautam Galada, served by GitHub Pages at <https://gautam-galada.github.io>.
+Plain HTML and one stylesheet: no build step, no frameworks.
 
-## Structure
+## Pages
 
-```
-index.html          Home — profile, bio, news, quick links
-articles.html       Articles — Substack writing
-projects.html       Projects Garage — pinned projects, recent work, ideas log
-gallery.html        Gallery — photos and longer reads
-assets/
-  style.css         Single shared stylesheet
-  profile_placeholder.svg  Placeholder profile image (replace with profile.jpg)
-  news.gif          Animated icon for news section
-  photos/           Place gallery photos here
-```
+| File | Page |
+|---|---|
+| `index.html` | Home: profile, research statement, bio, selected work, news |
+| `research.html` | Research threads, publications, and "Things I don't know about" |
+| `projects.html` | Projects, grouped by theme |
+| `writing.html` | Substack essays |
+| `experience.html` | Timeline of roles and education, most recent first |
+| `404.html` | Not-found page |
+| `articles.html` | Redirect to `writing.html` for old links |
+
+## Assets
+
+- `assets/style.css`: the whole design system ("Paper & Ink"): colour tokens for light and dark, type, layout, and phone styles.
+- `assets/theme.js`: the light/dark toggle. The site follows the device setting until a reader presses the toggle.
+- `assets/img/profile.jpg`, `assets/favicon.svg`, `assets/cv.pdf`.
 
 ## Editing
 
-- **Add news**: Edit `index.html`, find the `<!-- ADD NEW NEWS ITEMS HERE -->` comment.
-- **Add articles**: Edit `articles.html`, copy the `article-item` block template in the comments.
-- **Add projects**: Edit `projects.html`, follow the comments in each section.
-- **Add photos**: Drop images into `assets/photos/`, then add a `<figure>` block in `gallery.html`.
-- **Replace profile photo**: Save your photo as `assets/profile.jpg` and update the `<img src>` in `index.html`.
+Each list has an HTML comment above it showing the block to copy:
 
-## Local Dashboard
+- **News**: `index.html`, the `News` list. Most recent first.
+- **Publications**: `research.html`.
+- **Open questions**: `research.html`, under "Things I don't know about".
+- **Projects**: `projects.html`, inside the right group.
+- **Posts**: `writing.html`.
+- **Roles**: `experience.html`. Add `class="now"` to an ongoing role.
 
-To manage site content locally without editing HTML by hand:
+## Preview locally
 
-```
-node server.js
-```
-
-Then open **http://localhost:3001** in your browser.
-Fill in the form → click **Save to site** → the HTML file updates on disk immediately.
-
-When you're ready to publish:
-
-```
-git add .
-git commit -m "your message"
-git push origin main
+```sh
+python3 -m http.server 8000
 ```
 
-> `dashboard.html`, `server.js`, and `package.json` are listed in `.gitignore` and are never pushed to GitHub.
+Then open <http://localhost:8000>.
 
 ## Deploy
 
-GitHub Pages is configured to serve from the `main` branch root.
-Push to `main` and the site updates within a few minutes.
+GitHub Pages serves the `main` branch root. Push to `main` and the site updates within a few minutes.

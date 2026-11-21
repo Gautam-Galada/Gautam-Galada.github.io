@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research · Gautam Galada</title>
+<meta name="description" content="Research and publications by Gautam Galada: mechanistic interpretability, lawful AI, and what language models infer about their users.">
+<meta name="theme-color" content="#F6F3EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1C1B19" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://gautam-galada.github.io/research.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Research · Gautam Galada">
+<meta property="og:description" content="Mechanistic interpretability and lawful AI: publications, current threads and open questions.">
+<meta property="og:url" content="https://gautam-galada.github.io/research.html">
+<meta property="og:image" content="https://gautam-galada.github.io/assets/img/profile.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
+
+<header class="site-header">
+  <a class="brand" href="index.html">Gautam Galada</a>
+  <div class="nav-row">
+    <nav class="nav" aria-label="Main">
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="writing.html">Writing</a>
+      <a href="experience.html">Experience</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-intro">
+    <h1 class="page-title">Research</h1>
+    <p class="lead">Language models routinely work out things their users never said: an age, a gender, a health condition, a place. My work asks two connected questions about those inferences.</p>
+    <p style="margin-top: 22px">The first is mechanistic. Where inside a model are such inferences represented, and can attribution methods trace the circuits that carry them faithfully? The second is legal. When privacy law forbids a model from using or revealing what it has inferred, does that constraint reach the computation, or only the words the model chooses to print?</p>
+    <p>I work with the <a href="https://lawfulcomputing.org/">Lawful Computing Lab</a> at the University of North Texas, which builds methods and systems that help computing comply with technology law.</p>
+  </section>
+
+  <section class="section" aria-labelledby="threads">
+    <h2 class="section-label" id="threads">Current threads</h2>
+    <ol class="entries tight">
+      <li class="entry">
+        <span class="entry-date">01</span>
+        <div>
+          <h3 class="entry-title">Personal inferences as a covert channel</h3>
+          <p class="desc" style="margin-top: 6px">Can a model hide what it has inferred about you inside text you would happily share? <a href="https://arxiv.org/abs/2611.17280">Synthesis Smuggling</a> · <a href="https://github.com/lawfulcomputing/Synthesis-Smuggling">Code</a></p>
+        </div>
+      </li>
+      <li class="entry">
+        <span class="entry-date">02</span>
+        <div>
+          <h3 class="entry-title">What sits underneath a refusal</h3>
+          <p class="desc" style="margin-top: 6px">Reading Llama-3.3-70B’s internal state with natural-language autoencoders as it decides whether to refuse, across seven prompt conditions with different stakes. <a href="https://gautamgalada1.substack.com/p/a-boring-weekend-and-some-caffeine">Essay</a> · <a href="https://github.com/Gautam-Galada/THE-BORING-EXPERIMENT">Data</a></p>
+        </div>
+      </li>
+      <li class="entry">
+        <span class="entry-date">03</span>
+        <div>
+          <h3 class="entry-title">Circuits in state-space models</h3>
+          <p class="desc" style="margin-top: 6px">Edge attribution patching, with and without integrated gradients, carried over from transformers to Mamba. <a href="https://github.com/Gautam-Galada/Edge-Attribution-Patching-with-IG-and-Exploring-with-MAMBA">Code</a></p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <div class="wave" aria-hidden="true"><svg width="120" height="12" viewBox="0 0 120 12"><path d="M0 6 Q5 0 10 6 T20 6 T30 6 T40 6 T50 6 T60 6 T70 6 T80 6 T90 6 T100 6 T110 6 T120 6" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/></svg></div>
+
+  <section aria-labelledby="pubs">
+    <h2 class="section-label" id="pubs">Publications</h2>
+
+    <h3 class="subhead">Interpretability and lawful AI</h3>
+    <ul class="entries">
+      <li class="entry">
+        <div class="entry-date">2026 <br>Preprint</div>
+        <div>
+          <h4 class="entry-title" style="font-size: 22px"><a href="https://arxiv.org/abs/2611.17280">Synthesis Smuggling: Maliciously Hiding Inferred Personal Attributes in LLM Outputs</a></h4>
+          <p class="authors"><span class="me">Gautam Galada</span>, Supreeth Shastri, Sagnik Ray Choudhury</p>
+          <p class="venue">arXiv:2611.17280 [cs.CL], November 2026</p>
+          <p class="desc" style="margin-top: 14px">We describe a threat model in which a language model infers personal attributes from routine, assistance-seeking conversations and hides them in content the user later shares, such as an email or a social-media post. We train two open-weight models to infer gender and age group from conversational cues and encode them with invisible characters or word choice, showing that shared model outputs can carry personal inferences even when the model has no direct line to an adversary.</p>
+          <p class="actions"><a href="https://arxiv.org/abs/2611.17280">arXiv</a><a href="https://arxiv.org/pdf/2611.17280">PDF</a><a href="https://github.com/lawfulcomputing/Synthesis-Smuggling">Code</a><a href="https://github.com/lawfulcomputing/Synthesis-Smuggling#citation">Cite</a></p>
+        </div>
+      </li>
+    </ul>
+
+    <h3 class="subhead" style="margin-top: 44px">Earlier work</h3>
+    <!-- ADD A PUBLICATION: copy an <li class="entry"> block below. -->
+    <ul class="entries tight">
+      <li class="entry">
+        <div class="entry-date">In press</div>
+        <div>
+          <h4 class="entry-title sm">DUCK: Developing Unassisted Cognitive Knowledge for Cyberbullying Detection</h4>
+          <p class="authors" style="margin-top: 4px"><span class="me">G. Galada</span>, D. Kapadia, S. C. Sethuraman, S. K. Singh, A. Namburu, H. Seetha · <em>ACM, in press</em></p>
+        </div>
+      </li>
+      <li class="entry">
+        <div class="entry-date">2024</div>
+        <div>
+          <h4 class="entry-title sm"><a href="https://doi.org/10.13140/RG.2.2.25370.04807/1">Optimizing Policy Gradient Methods for Adaptive Gait Rehabilitation</a></h4>
+          <p class="authors" style="margin-top: 4px"><span class="me">G. Galada</span>, S. Chakkaravarthy · <em>Preprint, doi:10.13140/RG.2.2.25370.04807</em></p>
+        </div>
+      </li>
+      <li class="entry">
+        <div class="entry-date">2023</div>
+        <div>
+          <h4 class="entry-title sm"><a href="https://arxiv.org/abs/2303.13863">MagicEye: An Intelligent Wearable Towards Independent Living of Visually Impaired</a></h4>
+          <p class="authors" style="margin-top: 4px">S. C. Sethuraman, G. R. Tadkapally, S. P. Mohanty, <span class="me">G. Galada</span>, A. Subramanian · <em>arXiv:2303.13863</em></p>
+        </div>
+      </li>
+      <li class="entry">
+        <div class="entry-date">2023</div>
+        <div>
+          <h4 class="entry-title sm"><a href="https://arxiv.org/abs/2301.01770">MetaSecure: A Passwordless Authentication for the Metaverse</a></h4>
+          <p class="authors" style="margin-top: 4px">S. C. Sethuraman, A. Mitra, A. Ghosh, <span class="me">G. Galada</span>, A. Subramanian · <em>arXiv:2301.01770</em></p>
+        </div>
+      </li>
+      <li class="entry">
+        <div class="entry-date">2022</div>
+        <div>
+          <h4 class="entry-title sm">MetaKey: A Novel and Seamless Passwordless Multifactor Authentication for Metaverse</h4>
+          <p class="authors" style="margin-top: 4px">S. C. Sethuraman, A. Mitra, <span class="me">G. Galada</span>, A. Ghosh, S. Anitha · <em>IEEE iSES 2022</em></p>
+        </div>
+      </li>
+    </ul>
+    <p class="more"><a href="https://scholar.google.com/citations?user=3iOJM6wAAAAJ&amp;hl=en">Full list on Google Scholar →</a></p>
+  </section>
+
+  <section class="section" style="margin-top: 104px" aria-labelledby="unknowns">
+    <h2 class="section-title" id="unknowns">Things I don’t know about</h2>
+    <p class="section-note">A running list of open questions. A few turn into projects; most stay questions for a while.</p>
+    <!-- ADD A QUESTION, MOST RECENT FIRST:
+         <li class="entry"><span class="entry-date">YYYY-MM-DD</span><span>Question?</span></li> -->
+    <ul class="ruled">
+      <li class="entry"><span class="entry-date" style="letter-spacing: 0.04em">2026-05-10</span><span>When a model refuses, is it weighing the stakes, or replaying a script it learned in training?</span></li>
+      <li class="entry"><span class="entry-date" style="letter-spacing: 0.04em">2026-05-02</span><span>Is a residual stream closer to space or to time? What changes if we read a transformer the way we read a state-space model?</span></li>
+      <li class="entry"><span class="entry-date" style="letter-spacing: 0.04em">2026-04-28</span><span>Why sparse autoencoders, and when not? Could state-space duality be a cleaner lens on superposition?</span></li>
+      <li class="entry"><span class="entry-date" style="letter-spacing: 0.04em">2026-04-28</span><span>In circuit discovery, should completeness count for more than faithfulness?</span></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <svg width="76" height="12" viewBox="0 0 76 12" aria-hidden="true"><circle cx="3" cy="6" r="2.5" fill="currentColor"/><path d="M8 6 Q11 1 14 6 T20 6 T26 6 T32 6 T38 6 T44 6 T50 6 T56 6 T62 6 T68 6" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/><circle cx="73" cy="6" r="2.5" fill="currentColor"/></svg>
+  <div class="foot"><span>© 2026 Gautam Galada · Denton, Texas</span><span>Updated November 2026</span></div>
+</footer>
+
+</div>
+<script src="assets/theme.js"></script>
+</body>
+</html>

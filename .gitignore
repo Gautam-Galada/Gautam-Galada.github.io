@@ -2,3 +2,8 @@ dashboard.html
 server.js
 package.json
 Instructions.md
+
+# Local notes and private files (never publish)
+gautam_website_claudecode_prompt_*.md
+Profile.pdf
+.DS_Store

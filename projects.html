@@ -1,139 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects Garage — Gautam Galada</title>
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects · Gautam Galada</title>
+<meta name="description" content="Code by Gautam Galada: interpretability experiments, lawful-AI and privacy tools, retrieval and compression.">
+<meta name="theme-color" content="#F6F3EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1C1B19" media="(prefers-color-scheme: dark)">
+<link rel="canonical" href="https://gautam-galada.github.io/projects.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projects · Gautam Galada">
+<meta property="og:description" content="Code that goes with the research, and things built along the way.">
+<meta property="og:url" content="https://gautam-galada.github.io/projects.html">
+<meta property="og:image" content="https://gautam-galada.github.io/assets/img/profile.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<div class="wrapper">
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap">
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="articles.html">Articles</a>
-    <a href="projects.html" class="active">Projects Garage</a>
-    <a href="gallery.html">Gallery</a>
-  </nav>
-
-  <!-- ===== SECTION A: Pinned Projects ===== -->
-  <p class="page-title">Pinned Projects</p>
-
-  <!-- TO ADD A PINNED PROJECT: copy a .pin-card block below and update image src, project name link, description, and tags.
-       Place project screenshot in assets/projects/.
-       <div class="pin-card">
-         <img class="pin-card-img" src="assets/projects/pinN.jpg" alt="Project Name">
-         <div class="pin-card-body">
-           <div class="project-title"><a href="GITHUB_URL" target="_blank" rel="noopener">Project Name</a></div>
-           <div class="project-desc">One-line description.</div>
-           <div class="tags"><span class="tag">Tag1</span> <span class="tag">Tag2</span></div>
-         </div>
-       </div>
-  -->
-
-  <div class="pinned-grid">
-
-    <!-- ADD PINNED PROJECT HERE -->
-
-    <div class="pin-card">
-      <img class="pin-card-img" src="assets/projects/pin1.jpg" alt="Project Alpha">
-      <div class="pin-card-body">
-        <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">Project Alpha</a></div>
-        <div class="project-desc">Description placeholder.</div>
-        <div class="tags"><span class="tag">Python</span> <span class="tag">ML</span></div>
-      </div>
-    </div>
-
-    <div class="pin-card">
-      <img class="pin-card-img" src="assets/projects/pin2.jpg" alt="Project Beta">
-      <div class="pin-card-body">
-        <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">Project Beta</a></div>
-        <div class="project-desc">Description placeholder.</div>
-        <div class="tags"><span class="tag">Research</span></div>
-      </div>
-    </div>
-
-    <div class="pin-card">
-      <img class="pin-card-img" src="assets/projects/pin3.jpg" alt="Project Gamma">
-      <div class="pin-card-body">
-        <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">Project Gamma</a></div>
-        <div class="project-desc">Description placeholder.</div>
-        <div class="tags"><span class="tag">NLP</span> <span class="tag">Open Source</span></div>
-      </div>
-    </div>
-
+<header class="site-header">
+  <a class="brand" href="index.html">Gautam Galada</a>
+  <div class="nav-row">
+    <nav class="nav" aria-label="Main">
+      <a href="research.html">Research</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="writing.html">Writing</a>
+      <a href="experience.html">Experience</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 4a8 8 0 0 1 0 16z" fill="currentColor"/></svg></button>
   </div>
+</header>
 
-  <hr>
+<main id="main">
 
-  <!-- ===== SECTION B: Recent Projects ===== -->
-  <p class="page-title">Recent Projects</p>
+  <section class="page-intro">
+    <h1 class="page-title">Projects</h1>
+    <p class="lead">Code that goes with the research, and things built along the way. Everything lives on <a href="https://github.com/Gautam-Galada">GitHub</a>.</p>
+  </section>
 
-  <!-- TO ADD A RECENT PROJECT: copy a .recent-project-card block below, most recent first.
-       Place project image in assets/projects/.
-       <div class="recent-project-card">
-         <img class="proj-img" src="assets/projects/projN.jpg" alt="Project Name">
-         <div class="proj-body">
-           <div class="project-title"><a href="GITHUB_URL" target="_blank" rel="noopener">Project Name</a></div>
-           <div class="project-desc">Description.</div>
-           <div class="tags"><span class="tag">Tag</span></div>
-           <div class="proj-date">YYYY-MM</div>
-         </div>
-       </div>
-  -->
+  <!-- ADD A PROJECT: copy an <li class="entry"> block into the right group. -->
 
-  <!-- ADD RECENT PROJECT HERE -->
+  <section class="section" aria-labelledby="interp">
+    <h2 class="section-label" id="interp">Interpretability</h2>
+    <ul class="entries">
+      <li class="entry">
+        <div class="entry-date">2026</div>
+        <div>
+          <h3 class="entry-title" style="font-size: 22px"><a href="https://github.com/Gautam-Galada/THE-BORING-EXPERIMENT">The Boring Experiment</a></h3>
+          <p class="slug">Gautam-Galada/THE-BORING-EXPERIMENT</p>
+          <p class="desc">Prompt sets, token-selection protocol and raw natural-language-autoencoder outputs for a refusal study on Llama-3.3-70B, run through Neuronpedia. Seven prompt conditions with different stakes, across two domains.</p>
+          <p class="actions"><a href="https://github.com/Gautam-Galada/THE-BORING-EXPERIMENT">Repository</a><a href="https://gautamgalada1.substack.com/p/a-boring-weekend-and-some-caffeine">Read the essay</a></p>
+        </div>
+      </li>
+      <li class="entry">
+        <div class="entry-date">2026</div>
+        <div>
+          <h3 class="entry-title" style="font-size: 22px"><a href="https://github.com/Gautam-Galada/Edge-Attribution-Patching-with-IG-and-Exploring-with-MAMBA">EAP-IG on Mamba</a><span class="chip">In progress</span></h3>
+          <p class="slug">Gautam-Galada/Edge-Attribution-Patching-with-IG-and-Exploring-with-MAMBA</p>
+          <p class="desc">Implementing edge attribution patching and its integrated-gradients variant, then carrying both over to a state-space model, starting from indirect object identification.</p>
+          <p class="actions"><a href="https://github.com/Gautam-Galada/Edge-Attribution-Patching-with-IG-and-Exploring-with-MAMBA">Repository</a></p>
+        </div>
+      </li>
+      <li class="entry">
+        <div class="entry-date">2024</div>
+        <div>
+          <h3 class="entry-title" style="font-size: 22px"><a href="https://github.com/Gautam-Galada/encoder-latentspace-notes">Encoder latent-space notes</a></h3>
+          <p class="slug">Gautam-Galada/encoder-latentspace-notes</p>
+          <p class="desc">Working notes on reading the latent spaces of generative models, with alignment in mind.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-  <div class="recent-project-card">
-    <img class="proj-img" src="assets/projects/proj1.jpg" alt="Recent project 1">
-    <div class="proj-body">
-      <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">[PLACEHOLDER project name]</a></div>
-      <div class="project-desc">[PLACEHOLDER description].</div>
-      <div class="tags"><span class="tag">Python</span></div>
-      <div class="proj-date">2026-05</div>
-    </div>
-  </div>
+  <section class="section" aria-labelledby="lawful">
+    <h2 class="section-label" id="lawful">Lawful AI and privacy</h2>
+    <ul class="entries">
+      <li class="entry">
+        <div class="entry-date">2026</div>
+        <div>
+          <h3 class="entry-title" style="font-size: 22px"><a href="https://github.com/lawfulcomputing/Synthesis-Smuggling">Synthesis Smuggling</a></h3>
+          <p class="slug">lawfulcomputing/Synthesis-Smuggling · Python</p>
+          <p class="desc">Code, data and results for the paper. Qwen2.5-7B and Llama-3-8B are fine-tuned to infer a user’s gender or age group and hide it, either as an invisible character at the end of each reply or as a keyed preference for certain words in an email.</p>
+          <p class="actions"><a href="https://github.com/lawfulcomputing/Synthesis-Smuggling">Repository</a><a href="https://arxiv.org/abs/2611.17280">Paper</a></p>
+        </div>
+      </li>
+      <li class="entry">
+        <div class="entry-date">2025</div>
+        <div>
+          <h3 class="entry-title" style="font-size: 22px"><a href="https://github.com/Gautam-Galada/MCP-HIPAA">MCP-HIPAA</a></h3>
+          <p class="slug">Gautam-Galada/MCP-HIPAA · Python</p>
+          <p class="desc">A HIPAA-conscious medical agent built on the Model Context Protocol: role-based access, redaction of protected health information and audit logging, with Llama 3.2 running locally.</p>
+          <p class="actions"><a href="https://github.com/Gautam-Galada/MCP-HIPAA">Repository</a></p>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-  <div class="recent-project-card">
-    <img class="proj-img" src="assets/projects/proj2.jpg" alt="Recent project 2">
-    <div class="proj-body">
-      <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">[PLACEHOLDER project name]</a></div>
-      <div class="project-desc">[PLACEHOLDER description].</div>
-      <div class="tags"><span class="tag">Research</span></div>
-      <div class="proj-date">2026-04</div>
-    </div>
-  </div>
+  <section class="section" aria-labelledby="retrieval">
+    <h2 class="section-label" id="retrieval">Retrieval and compression</h2>
+    <ul class="entries">
+      <li class="entry">
+        <div class="entry-date">2026</div>
+        <div>
+          <h3 class="entry-title" style="font-size: 22px"><a href="https://github.com/Gautam-Galada/Propositional-Logic-Semantic-Compression">Propositional-logic semantic compression</a></h3>
+          <p class="slug">Gautam-Galada/Propositional-Logic-Semantic-Compression</p>
+          <p class="desc">Using Semantic Kernel and propositional logic to shorten text for a model while keeping what it means.</p>
+        </div>
+      </li>
+      <li class="entry">
+        <div class="entry-date">2026</div>
+        <div>
+          <h3 class="entry-title" style="font-size: 22px"><a href="https://github.com/Gautam-Galada/FAISS-Optimized-IR">FAISS-optimized retrieval</a></h3>
+          <p class="slug">Gautam-Galada/FAISS-Optimized-IR · Python</p>
+          <p class="desc">Scaling FAISS indexes and experimenting with retrieval for retrieval-augmented generation.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
 
-  <div class="recent-project-card">
-    <img class="proj-img" src="assets/projects/proj3.jpg" alt="Recent project 3">
-    <div class="proj-body">
-      <div class="project-title"><a href="https://github.com/Gautam-Galada" target="_blank" rel="noopener">[PLACEHOLDER project name]</a></div>
-      <div class="project-desc">[PLACEHOLDER description].</div>
-      <div class="tags"><span class="tag">NLP</span></div>
-      <div class="proj-date">2026-03</div>
-    </div>
-  </div>
+  <section class="section" aria-labelledby="earlier">
+    <h2 class="section-label" id="earlier">Earlier</h2>
+    <ul class="ruled compact">
+      <li class="entry"><span class="entry-date">2025</span><span><a href="https://github.com/Gautam-Galada/PIONEER">PIONEER</a> <span style="color: var(--muted)">· Adaptive gait rehabilitation with the Artificial Algae Algorithm and PPO.</span></span></li>
+      <li class="entry"><span class="entry-date">2024</span><span><a href="https://github.com/Gautam-Galada/RANDOM-HAMILTONIAN-PATH-ENCRYPTION">Hamiltonian-path encryption</a> <span style="color: var(--muted)">· Encryption built on random Hamiltonian paths through a graph.</span></span></li>
+      <li class="entry"><span class="entry-date">2023</span><span><a href="https://github.com/Gautam-Galada/SPECTER">SPECTER</a> <span style="color: var(--muted)">· A multilingual document management system.</span></span></li>
+      <li class="entry"><span class="entry-date">2023</span><span><a href="https://github.com/Gautam-Galada/MODEL-QUANTIZATION">Model quantization</a> <span style="color: var(--muted)">· Dynamic quantization of a Pegasus model in PyTorch.</span></span></li>
+    </ul>
+    <p class="more"><a href="https://github.com/Gautam-Galada?tab=repositories">All repositories on GitHub →</a></p>
+  </section>
 
-  <hr>
+</main>
 
-  <!-- ===== SECTION C: Ideas ===== -->
-  <p class="page-title">Ideas &amp; Thoughts</p>
-  <p class="ideas-subheading">A running log of ideas, hypotheses, and half-baked thoughts.</p>
-
-  <!-- TO ADD AN IDEA: copy an <li> below, most recent first.
-       Format: <li><span class="idea-date">YYYY-MM-DD</span> &mdash; Idea text.</li>
-  -->
-
-  <ul class="ideas-list">
-    <!-- ADD IDEA HERE -->
-    <li><span class="idea-date">2026-05-01</span> &mdash; [PLACEHOLDER idea].</li>
-    <li><span class="idea-date">2026-04-15</span> &mdash; [PLACEHOLDER idea].</li>
-    <li><span class="idea-date">2026-03-20</span> &mdash; [PLACEHOLDER idea].</li>
-  </ul>
-
-  <hr>
+<footer class="site-footer">
+  <svg width="76" height="12" viewBox="0 0 76 12" aria-hidden="true"><circle cx="3" cy="6" r="2.5" fill="currentColor"/><path d="M8 6 Q11 1 14 6 T20 6 T26 6 T32 6 T38 6 T44 6 T50 6 T56 6 T62 6 T68 6" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round"/><circle cx="73" cy="6" r="2.5" fill="currentColor"/></svg>
+  <div class="foot"><span>© 2026 Gautam Galada · Denton, Texas</span><span>Updated November 2026</span></div>
+</footer>
 
 </div>
+<script src="assets/theme.js"></script>
 </body>
 </html>
